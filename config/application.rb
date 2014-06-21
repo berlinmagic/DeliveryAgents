@@ -6,6 +6,12 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# load app configuration
+app_yaml_data = YAML.load(File.read(File.expand_path('../configuration.yml', __FILE__)))
+CONFIG = HashWithIndifferentAccess.new(app_yaml_data)
+CONFIG.merge! CONFIG.fetch(Rails.env, {})
+
+
 module DeliveryAgents
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

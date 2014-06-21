@@ -30,6 +30,7 @@ gem "non-stupid-digest-assets"
 ## Authentication and Authorisation
 gem 'devise'
 gem 'devise-i18n-views'
+gem "omniauth-paypal"
 
 
 ## JSON API
