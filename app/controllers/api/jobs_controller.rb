@@ -1,5 +1,5 @@
 module Api
-  class JobsController < ApplicationController
+  class JobsController < BaseController
     def index
       builder = MockJobBuilder.new
       jobs = [].tap { |j| 10.times { j << builder.build } }

@@ -1,5 +1,5 @@
 module Api
-  class SessionsController < ApplicationController
+  class SessionsController < BaseController
     def create
       render json: { api_token: "valid token" }
     end
