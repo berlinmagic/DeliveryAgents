@@ -29,8 +29,7 @@ gem "non-stupid-digest-assets"
 
 ## Authentication and Authorisation
 gem 'devise'
-# gem 'devise-i18n-views' # => views and de,en translations in the app
-gem 'devise_invitable', '~> 1.3.5'
+gem 'devise-i18n-views'
 
 
 ## JSON API
