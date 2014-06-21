@@ -80,7 +80,7 @@ GEM
     letter_opener (1.2.0)
       launchy (~> 2.2)
     libv8 (3.16.14.3)
-    magic_stylez (0.0.0.6)
+    magic_stylez (0.0.0.9)
       autoprefixer-rails (>= 1.1)
       bootstrap-sass (>= 3.0.0)
       bourbon (>= 3.0.0)
