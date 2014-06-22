@@ -6,4 +6,14 @@ class JobsController < ApplicationController
   end
   
   
+  def create
+    @job = Job.new( job_params )
+  end
+  
+  
+  private
+    
+    def job_params
+      params.require(:job).permit( Job::MODEL_PARAMS )
+    end
 end

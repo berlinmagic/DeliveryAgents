@@ -44,6 +44,17 @@
           </div>
         </div>
         
+        <%= f.fields_for :address_attributes do |a| %>
+          <%= render "addresses/address_fields", f: a%>
+          <div class="row">
+            <div class="col-sm-4 press">
+              <%= a.label :address %>
+            </div>
+            <div class="col-sm-8 press">
+              <%= a.text_field :address, class: "form-control" %>
+            </div>
+          </div>
+        <% end %>
         
         <div class="row">
           <div class="col-sm-4 press">

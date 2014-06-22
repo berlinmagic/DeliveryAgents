@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require jquery_ui_addresspicker
 //= require addresspicker_form
 //= require datetimepicker

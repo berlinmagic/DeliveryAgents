@@ -17,6 +17,8 @@
 
 class Job < ActiveRecord::Base
   
+  MODEL_PARAMS = [ :id, :job_type, :description, :date, :js_date, :duration, :_destroy, :address_attributes => Address::MODEL_PARAMS ]
+  
   TYPES = %w(care help clean)
   STATES = %w(new accepted refused)
   

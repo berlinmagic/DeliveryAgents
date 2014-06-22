@@ -208,3 +208,12 @@ ul.loud {
 h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 }
+
+.ui-autocomplete.ui-menu.ui-widget {
+	background: #fff;
+	border: solid 1px #ccc;
+	z-index: 9999;
+}
+.ui-helper-hidden-accessible {
+	display: block;
+}

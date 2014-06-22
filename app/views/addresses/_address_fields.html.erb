@@ -1,0 +1,29 @@
+<% style ||= "" %>
+<% placeholder ||= "Your address" %>
+<% idkey = "locations_attributes_#{rand(999999)}_" %>
+<div class="map_form">
+	
+		<input type="text" id="<%= idkey %>map_data" class="lcl_map_data <%= style %>" placeholder="<%= placeholder %>" />
+		<%= f.hidden_field :street, class: "lcl_txt street", id: "#{idkey}street" %>
+		<%= f.hidden_field :street_number, class: "lcl_txt street_number", id: "#{idkey}street_number" %>
+		<%= f.hidden_field :latitude, id: "#{idkey}latitude", class: "lcl_latitude" %>
+		<%= f.hidden_field :longitude, id: "#{idkey}longitude", class: "lcl_longitude" %>
+		<%= f.hidden_field :zip, class: "lcl_txt zip", id: "#{idkey}zip" %>
+		
+		<%= f.hidden_field :country, class: "lcl_txt country", id: "#{idkey}country" %>
+		
+		<%= f.hidden_field :city, class: "lcl_txt city", id: "#{idkey}city" %>
+		<%= f.hidden_field :subcity, class: "lcl_txt subcity", id: "#{idkey}subcity" %>
+		
+		
+		<%= f.hidden_field :state, class: "lcl_txt state", id: "#{idkey}state" %>
+		<%= f.hidden_field :county, class: "lcl_txt county", id: "#{idkey}county" %>
+		<%= f.hidden_field :subcounty, class: "lcl_txt subcounty", id: "#{idkey}subcounty" %>
+		
+		
+		<div class="clearfix"></div>
+		<div id="<%= idkey %>preview_map" class="address_preview_map"></div>
+	
+</div>
+
+

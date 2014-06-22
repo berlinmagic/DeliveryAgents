@@ -15,6 +15,7 @@
 #	 some improvements and coffeescript conversion by twetzel
 
 (($, window, document) ->
+  
 	
 	$.widget "ui.addresspicker",
 		options:
