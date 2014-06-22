@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery_ui_addresspicker
+//= require addresspicker_form
+
+
+
+updateLocationFormAllGoogleFields()

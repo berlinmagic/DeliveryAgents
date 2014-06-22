@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140621230536) do
+ActiveRecord::Schema.define(version: 20140622035552) do
 
   create_table "addresses", force: true do |t|
     t.string   "street"
@@ -33,6 +33,21 @@ ActiveRecord::Schema.define(version: 20140621230536) do
   add_index "addresses", ["longitude"], name: "index_addresses_on_longitude"
   add_index "addresses", ["owner_type", "owner_id"], name: "index_addresses_on_owner_type_and_owner_id"
 
+  create_table "jobs", force: true do |t|
+    t.string   "job_type"
+    t.text     "description"
+    t.datetime "date"
+    t.integer  "duration"
+    t.string   "state"
+    t.integer  "client_id"
+    t.integer  "agent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "jobs", ["agent_id"], name: "index_jobs_on_agent_id"
+  add_index "jobs", ["client_id"], name: "index_jobs_on_client_id"
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "first_name"
@@ -51,6 +66,7 @@ ActiveRecord::Schema.define(version: 20140621230536) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "user_type"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

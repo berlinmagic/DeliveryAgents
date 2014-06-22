@@ -1,9 +1,18 @@
+# encoding: utf-8
 class User < ActiveRecord::Base
+  
+  TYPES = %w(client agent)
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise  :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable,
           :omniauthable, :omniauth_providers => [:paypal]
   
+  
+  has_many :offered_jobs,   class_name: "Job",  foreign_key: :client_id
+  has_many :job_offers,     class_name: "Job",  foreign_key: :agent_id
+  
+  has_one_address
   
   
   def self.find_for_paypal_oauth(auth)
