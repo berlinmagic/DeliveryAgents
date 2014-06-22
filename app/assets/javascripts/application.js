@@ -17,7 +17,7 @@
 //= require datetimepicker
 
 
-updateLocationFormAllGoogleFields()
+updateLocationFormAllGoogleFields();
 
 $(document).ready(function() {
     $('.datepicker').datetimepicker();
