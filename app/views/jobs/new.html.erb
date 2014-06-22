@@ -33,7 +33,7 @@
           <%= f.label :duration %>
         </div>
         <div class="col-sm-8 press">
-          <%= f.select :job_type, options_for_select( [2,4,8].map{|t| ["#{t} hours",t]}, f.object.duration), {}, {class: "form-control"} %>
+          <%= f.select :duration, options_for_select( [2,4,8].map{|t| ["#{t} hours",t]}, f.object.duration), {}, {class: "form-control"} %>
         </div>
       </div>
 
