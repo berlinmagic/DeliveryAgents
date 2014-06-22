@@ -25,6 +25,8 @@ gem "i18n-js"         # => use locale files and I18n helper in js also
 # also generate assets without digest
 gem "non-stupid-digest-assets"
 
+gem "active_model_serializers"
+
 
 
 ## Authentication and Authorisation
