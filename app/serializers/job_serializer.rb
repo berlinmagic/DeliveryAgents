@@ -16,4 +16,8 @@ class JobSerializer < ActiveModel::Serializer
   def lon
     object.address.longitude
   end
+
+  def date
+    object.date.strftime("%d/%m/%Y")
+  end
 end
