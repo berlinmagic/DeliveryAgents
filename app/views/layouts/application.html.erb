@@ -30,11 +30,12 @@
           <li><span class="name"><%= "Logged In" if current_user %></span></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li class="button">
+          <li class="<%= current_user ? 'dropdown' : 'button' %>">
             <% if current_user %>
               <%= link_to "Logout", destroy_user_session_path, class: "btn btn-default", method: :delete %>
             <% else %>
-              <%= link_to "Login", new_user_registration_path, class: "btn btn-success" %>
+              <%= link_to "Login", new_user_session_path, class: "btn btn-success" %>
+              
             <% end %>
           </li>
         </ul>

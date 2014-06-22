@@ -1,5 +1,7 @@
+@import "jquery.ui.all";
 @import "magic-stylez";
 @import "icomoon";
+@import "datetimepicker";
 
 
 #fixed_nav {
@@ -215,5 +217,10 @@ h1, h2, h3, h4, h5, h6 {
 	z-index: 9999;
 }
 .ui-helper-hidden-accessible {
-	display: block;
+	display: none;
+}
+
+
+input.form-control.error {
+	border: solid 1px #c00;
 }

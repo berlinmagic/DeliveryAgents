@@ -13,13 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
+//= require map_marker
 //= require jquery_ui_addresspicker
 //= require addresspicker_form
 //= require datetimepicker
+//= require datetimepicker_form
 
 
 updateLocationFormAllGoogleFields();
 
-$(document).ready(function() {
-    $('.datepicker').datetimepicker();
-});
+// $(document).ready(function() {
+//     $('.datepicker').datetimepicker();
+// });
