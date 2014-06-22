@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
+//= require magic-stylez
+//= require bootstrap
 //= require map_marker
 //= require jquery_ui_addresspicker
 //= require addresspicker_form

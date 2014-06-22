@@ -10,7 +10,8 @@ class JobsController < ApplicationController
     @job = Job.new( job_params )
     @job.client = current_user if current_user
     if @job.save
-      redirect_to root_path, notice: "Job was created!"
+      flash[:notice] = "Job was created!"
+      render :create
     else
       redirect_to root_path, alert: "Job couldn't be created"
     end

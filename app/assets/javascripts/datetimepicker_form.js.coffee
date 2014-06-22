@@ -1,4 +1,12 @@
+
+
 $ ->
+
+
+  if jQuery("#flash_msg div").length > 0
+    noticeTimer = setTimeout(->
+      $("#flash_msg div").slideUp();
+    , 3500)
 
   $.datepicker.setDefaults({ dateFormat: 'dd.mm.yy' })
   is_new = $('#order_js_date').data('new')

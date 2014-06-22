@@ -20,9 +20,13 @@
 			display: block;
 		}
 	}
+	li.dropdown.open > a {
+		background: #000;
+		color: #09c;
+	}
 }
 
-body #body { padding: 42px 0 0;}
+body #body { padding: 40px 0 0;}
 
 
 
