@@ -2,7 +2,15 @@
 class JobsController < ApplicationController
   
   def index
-    
+    if current_user
+      if current_user.state == "agent"
+        @jobs = current_user.job_offers
+      else
+        @jobs = current_user.offered_jobs
+      end
+    else
+      @jobs = []
+    end
   end
   
   def new
