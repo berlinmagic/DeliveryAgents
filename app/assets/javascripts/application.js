@@ -14,7 +14,11 @@
 //= require jquery_ujs
 //= require jquery_ui_addresspicker
 //= require addresspicker_form
-
+//= require datetimepicker
 
 
 updateLocationFormAllGoogleFields()
+
+$(document).ready(function() {
+    $('.datepicker').datetimepicker();
+});
