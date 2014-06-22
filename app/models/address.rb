@@ -1,12 +1,12 @@
 # encoding: utf-8
 class Address < ActiveRecord::Base
-  
+
   MODEL_PARAMS = [      :street, :street_number, :zip, :city, :subcity, :state, :country,
                         :latitude, :longitude, :visibility,  :_destroy                    ]
-  
+
   # =====> A S S O Z I A T I O N S <======================================================== #
   belongs_to :owner, :polymorphic => true
-  
+
   def address
     adr = []
     adr << street if street.present?
@@ -19,5 +19,4 @@ class Address < ActiveRecord::Base
       adr.join(" ")
     end
   end
-  
 end
