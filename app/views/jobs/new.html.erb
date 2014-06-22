@@ -1,72 +1,71 @@
 <div class="section">
   <div class="corset">
     <%= form_for @job, html: {class: "box form"} do |f| %>
-      
-      
+
+
       <div class="header">
-        Book your care
+      Book your care
+    </div>
+    <div class="body">
+
+      <div class="row">
+        <div class="col-sm-4 press">
+          <%= f.label :job_type %>
+        </div>
+        <div class="col-sm-8 press">
+          <%= f.select :job_type, options_for_select( Job::TYPES.map{|t| [t.titleize,t]}, f.object.job_type), {}, {class: "form-control"} %>
+        </div>
       </div>
-      <div class="body">
-        
-        <div class="row">
-          <div class="col-sm-4 press">
-            <%= f.label :job_type %>
-          </div>
-          <div class="col-sm-8 press">
-            <%= f.select :job_type, options_for_select( Job::TYPES.map{|t| [t.titleize,t]}, f.object.job_type), {}, {class: "form-control"} %>
-          </div>
+
+      <div class="row">
+        <div class="col-sm-4 press">
+          <%= f.label :date %>
         </div>
-        
-        <div class="row">
-          <div class="col-sm-4 press">
-            <%= f.label :date %>
-          </div>
-          <div class="col-sm-8 press">
-            <%= f.text_field :date, class: "form-control datepicker", placeholder: "Pic a date" %>
-          </div>
+        <div class="col-sm-8 press">
+          <%= f.text_field :date, class: "form-control datepicker", placeholder: t('job.date_placeholder') %>
         </div>
-        
-        <div class="row">
-          <div class="col-sm-4 press">
-            <%= f.label :duration %>
-          </div>
-          <div class="col-sm-8 press">
-            <%= f.select :job_type, options_for_select( [2,4,8].map{|t| ["#{t} hours",t]}, f.object.duration), {}, {class: "form-control"} %>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-sm-4 press">
-            <%= f.label :description %>
-          </div>
-          <div class="col-sm-8 press">
-            <%= f.text_area :description, class: "form-control" %>
-          </div>
-        </div>
-        
-        <%= f.fields_for :address_attributes do |a| %>
-          
-          <div class="row">
-            <div class="col-sm-4 press">
-              <%= a.label :address %>
-            </div>
-            <div class="col-sm-8 press">
-              <%= render "addresses/address_fields", f: a, style: "form-control" %>
-            </div>
-          </div>
-        <% end %>
-        
-        <div class="row">
-          <div class="col-sm-4 press">
-            <%= f.submit "Send", class: "btn btn-success btn-block" %>
-          </div>
-          <div class="col-sm-4 press">
-            <%= link_to "Cancel", root_path, class: "btn btn-default btn-block" %>
-          </div>
-        </div>
-        
       </div>
-      
+
+      <div class="row">
+        <div class="col-sm-4 press">
+          <%= f.label :duration %>
+        </div>
+        <div class="col-sm-8 press">
+          <%= f.select :job_type, options_for_select( [2,4,8].map{|t| ["#{t} hours",t]}, f.object.duration), {}, {class: "form-control"} %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 press">
+          <%= f.label :description %>
+        </div>
+        <div class="col-sm-8 press">
+          <%= f.text_area :description, class: "form-control" %>
+        </div>
+      </div>
+
+      <%= f.fields_for :address_attributes do |a| %>
+      <div class="row">
+        <div class="col-sm-4 press">
+          <%= a.label :address %>
+        </div>
+        <div class="col-sm-8 press">
+          <%= render "addresses/address_fields", f: a, style: "form-control" %>
+        </div>
+      </div>
     <% end %>
+
+      <div class="row">
+        <div class="col-sm-4 press">
+          <%= f.submit "Send", class: "btn btn-success btn-block" %>
+        </div>
+        <div class="col-sm-4 press">
+          <%= link_to "Cancel", root_path, class: "btn btn-default btn-block" %>
+        </div>
+      </div>
+
+    </div>
+
+  <% end %>
   </div>
 </div>2

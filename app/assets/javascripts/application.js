@@ -22,6 +22,8 @@
 
 updateLocationFormAllGoogleFields();
 
+
 // $(document).ready(function() {
 //     $('.datepicker').datetimepicker();
 // });
+
