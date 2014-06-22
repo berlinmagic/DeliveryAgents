@@ -293,3 +293,33 @@ input.form-control.error {
 		max-width: 100%;
 	}
 }
+
+
+.fill { height: 100%; }
+
+
+
+.rating {
+	// width: 200px;
+	display: block; display: inline-block; position: relative;
+	padding: 0;
+	.ratingStars {
+		.ratingWrapper {
+			background: image-url("starRatingGray.png") no-repeat scroll left top transparent;
+			height: 18px;
+			width: 100px;
+			.ratingInner {
+				background: image-url("starRatingYellow.png") no-repeat scroll left top transparent;
+				height: 18px;
+				width: 100px;
+			}
+	    }
+	}
+}
+
+
+.reputation-text {
+	display: block; display: inline-block; position: relative;
+	line-height: 20px;
+}
+
