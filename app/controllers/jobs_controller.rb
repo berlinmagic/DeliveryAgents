@@ -13,7 +13,8 @@ class JobsController < ApplicationController
       flash[:notice] = "Job was created!"
       render :create
     else
-      redirect_to root_path, alert: "Job couldn't be created"
+      flash[:alert] = "Job couldn't be created"
+      render :new
     end
   end
   

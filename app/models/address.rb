@@ -27,7 +27,10 @@ class Address < ActiveRecord::Base
 
   # =====> A S S O Z I A T I O N S <======================================================== #
   belongs_to :owner, :polymorphic => true
-
+  
+  
+  validates :street, :street_number, :city, :zip, :longitude, :latitude, presence: true
+  
   def address
     adr = []
     adr << street if street.present?

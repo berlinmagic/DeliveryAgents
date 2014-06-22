@@ -28,5 +28,8 @@ class Job < ActiveRecord::Base
   has_many :applications,   class_name: "Application",  foreign_key: :job_id
 
   has_one_address
+  
+  
+  validates :date, :duration, presence: true
 
 end
