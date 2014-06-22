@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # =>   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   # => end
   
+  get 'auth/:provider/callback', to: 'sessions#provider'
+  get 'auth/failure', to: redirect('/')
+  
   root to: "front#start"
   
 end

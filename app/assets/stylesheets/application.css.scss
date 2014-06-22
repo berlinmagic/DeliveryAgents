@@ -1,3 +1,198 @@
-@import "magic-stylez"
+@import "magic-stylez";
+@import "icomoon";
 
 
+#fixed_nav {
+	ul.nav.navbar-nav > li.button {
+		padding: 5px 10px;
+		a.btn {
+			line-height: 20px;
+			padding: 5px 15px;
+		}
+	}
+	.navbar-brand { line-height: 40px; }
+	ul.nav.navbar-nav > li {
+		padding: 5px;
+		a, span {
+			padding: 5px 15px;
+			display: block;
+		}
+	}
+}
+
+body #body { padding: 42px 0 0;}
+
+
+
+
+@include responsiveStep-sm {
+	.fixed-table, .layout-table {
+		display: table;
+	    width: 100%;
+		& > * {
+	        display: table-cell;
+	        border-collapse: separate;
+			&.feature-pic {
+				width: 140px;
+			}
+			@for $i from 1 through 12 {
+			  &.col-#{$i} { width: percentage(1 / 12 * $i); }
+			}
+	    }
+		&.grid > * {
+			padding: 0 10px;
+			&:first-child { padding-left: 0; }
+			&:last-child { padding-right: 0; }
+		}
+	}
+	.banner-box.responsive-hero { padding: 0; }
+}
+
+.banner-box.responsive-hero.park {
+	background-color: rgba(255,255,255,.50);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: image-url('park_blur.jpg');
+	
+	h1, h2, p, ul, li, a {
+		color: #fff;
+		text-shadow: 0 0 1px rgba(0,0,0,.92), 0 0 3px rgba(0,0,0,.92), 0 0 5px rgba(0,0,0,.92);
+	}
+	.banner_text {
+		padding: 10px 0 80px;
+	}
+}
+.pic-bottom {
+	background-image: image-url('grandma_wheelchair.png');
+}
+
+img.responsive {
+	max-width: 100%;
+	width: 100%;
+}
+
+
+ul {
+	display: block; position: relative;
+	margin: 0; padding: 0;
+	list-style: none;
+	text-align: left;
+	li {
+		display: block; position: relative;
+		margin: 0; padding: 0;
+	}
+	&.check_list li {
+		padding: 0 0 0 25px;
+		&:before {
+			display: block; position: absolute; content: "\f002";
+			font-family: 'magiconsregular';
+			color: green;
+			top: 0; left: 0;
+			font-size: 18px;
+		}
+	}
+	&.dash li {
+		padding: 0 0 0 25px;
+		&:before {
+			display: block; position: absolute; content: "-";
+			top: 0; left: 0;
+			font-size: 18px;
+		}
+	}
+}
+
+
+
+ul.loud {
+	& > li, & > li > a {
+		font-size: 18px;
+		line-height: 30px;
+	}
+}
+
+
+
+
+
+.block-btn-group {
+	@include box-sizing(border-box);
+	display: table;
+    width: 100%;
+    margin: 0 0 10px;
+	text-decoration: none;
+    .btn {
+		display: table-cell;
+		width: auto;
+		width: 99%;
+		&.icn { width: 1%; }
+		border-collapse: separate;
+        border-spacing: 0;
+		@include border-radius(0);
+		&:first-child { @include border-left-radius(5px); }
+        &:last-child { @include border-right-radius(5px); }
+    }
+	.btn + .btn {
+		border-left: none;
+	}
+	&.half { width: 50%; margin-left: auto; margin-right: auto; }
+	&:hover { text-decoration: none !important; }
+}
+
+
+
+
+
+
+
+
+.btn-app, .btn-google, .btn-facebook, .btn-twitter, .btn-paypal {
+    // padding: 5px 22px !important;
+    color: #fff;
+    &:hover, &:active {
+        color: #fff;
+    }
+    &.icn { font-size: 24px !important; padding: 2px 7px 0 7px !important; line-height: 28px !important; }
+}
+
+.btn-socials {
+	padding: 5px 22px !important;
+}
+
+.btn-facebook {
+  background: #3b5998;
+  text-shadow: 0 1px 0 #3b5998;
+  vertical-align: middle;
+  &:hover { background: darken(#3b5998, 5%); }
+  &:active { background: darken(#3b5998, 10%) \9; }
+}
+
+.btn-google {
+  background: #dd4b39;
+  text-shadow: 0 1px 0 #dd4b39;
+  &:hover { background: #e74b37; }
+  &:active { background: #be3e2e; }
+}
+
+.btn-twitter {
+  background: #00aced;
+  text-shadow: 0 1px 0 #00aced;
+  &:hover { background: darken(#00aced, 10%); }
+  &:active { background: darken(#00aced, 20%); }
+}
+
+.btn-paypal, .btn-paypal > .btn {
+	background: #12398c;
+	color: #fff;
+	border: solid 1px darken(#12398c, 20%);
+	// &:hover, &:hover > .btn {
+	// 	background: darken(#12398c, 10%);
+	// 	color: #fff;
+	// }
+	&.icn { font-size: 20px !important; }
+}
+
+.block-btn-group:hover .btn-paypal {
+	background: darken(#12398c, 10%);
+	color: #fff;
+}

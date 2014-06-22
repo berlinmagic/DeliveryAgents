@@ -1,0 +1,105 @@
+//** Load fonts from this directory.
+$icomoon-font-path: "" !default;
+//** File name for all font files.
+$icomoon-font-name: "icomoon" !default;
+//** Element ID within SVG icon file.
+$icomoon-font-svg-id: "icomoon" !default;
+
+$icomoon-class-name: "icon" !default;
+
+
+@font-face {
+    font-family: 'icomoon';
+	src: url(asset-path('#{$icomoon-font-path}#{$icomoon-font-name}.eot'));
+    }
+
+@font-face {
+    font-family: 'icomoon';
+    src: 	url(asset-path('#{$icomoon-font-path}#{$icomoon-font-name}.woff')) format('woff'),
+			url(asset-path('#{$icomoon-font-path}#{$icomoon-font-name}.ttf')) format('truetype'),
+			url(asset-path('#{$icomoon-font-path}#{$icomoon-font-name}.svg##{$magicons-font-svg-id}')) format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+[class^="#{$icomoon-class-name}-"], [class*=" #{$icomoon-class-name}-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.#{$icomoon-class-name}-home:before {
+	content: "\e600";
+}
+.#{$icomoon-class-name}-image:before {
+	content: "\e601";
+}
+.#{$icomoon-class-name}-image2:before {
+	content: "\e602";
+}
+.#{$icomoon-class-name}-images:before {
+	content: "\e603";
+}
+.#{$icomoon-class-name}-barcode:before {
+	content: "\e604";
+}
+.#{$icomoon-class-name}-qrcode:before {
+	content: "\e605";
+}
+.#{$icomoon-class-name}-credit:before {
+	content: "\e606";
+}
+.#{$icomoon-class-name}-location:before {
+	content: "\e607";
+}
+.#{$icomoon-class-name}-user:before {
+	content: "\e608";
+}
+.#{$icomoon-class-name}-users:before {
+	content: "\e609";
+}
+.#{$icomoon-class-name}-key:before {
+	content: "\e60a";
+}
+.#{$icomoon-class-name}-cloud:before {
+	content: "\e60b";
+}
+.#{$icomoon-class-name}-googleplus:before {
+	content: "\e60c";
+}
+.#{$icomoon-class-name}-facebook:before {
+	content: "\e60d";
+}
+.#{$icomoon-class-name}-twitter:before {
+	content: "\e60e";
+}
+.#{$icomoon-class-name}-github:before {
+	content: "\e60f";
+}
+.#{$icomoon-class-name}-github2:before {
+	content: "\e610";
+}
+.#{$icomoon-class-name}-paypal:before {
+	content: "\e611";
+}
+.#{$icomoon-class-name}-paypal2:before {
+	content: "\e612";
+}
+.#{$icomoon-class-name}-paypal3:before {
+	content: "\e613";
+}
+.#{$icomoon-class-name}-html5:before {
+	content: "\e614";
+}

@@ -9,20 +9,20 @@ company_mail: "info@deliveryagents.de"
 ## A P I - K E Y S
 ##################################################################################################################
 development:
-  paypal_id:        ''
-  paypal_secret:    ''
+  paypal_id:        'AcXWtRDbGjUGP0GPuDovNFfgYIk1kWteP7rH0bJ8cePoxsF1r0cfZJAk4afP'
+  paypal_secret:    'EK7waRANfnc51QywW_HJjERuMFLPB2fKk-2AKDViz_tIrfAloDYjx-lgvRBN'
 ##################################################################################################################
 test:
-  paypal_id:        ''
-  paypal_secret:    ''
+  paypal_id:        'AcXWtRDbGjUGP0GPuDovNFfgYIk1kWteP7rH0bJ8cePoxsF1r0cfZJAk4afP'
+  paypal_secret:    'EK7waRANfnc51QywW_HJjERuMFLPB2fKk-2AKDViz_tIrfAloDYjx-lgvRBN'
 ##################################################################################################################
 staging:
-  paypal_id:        ''
-  paypal_secret:    ''
+  paypal_id:        'AcXWtRDbGjUGP0GPuDovNFfgYIk1kWteP7rH0bJ8cePoxsF1r0cfZJAk4afP'
+  paypal_secret:    'EK7waRANfnc51QywW_HJjERuMFLPB2fKk-2AKDViz_tIrfAloDYjx-lgvRBN'
 ##################################################################################################################
 production:
-  paypal_id:        ''
-  paypal_secret:    ''
+  paypal_id:        'AcXWtRDbGjUGP0GPuDovNFfgYIk1kWteP7rH0bJ8cePoxsF1r0cfZJAk4afP'
+  paypal_secret:    'EK7waRANfnc51QywW_HJjERuMFLPB2fKk-2AKDViz_tIrfAloDYjx-lgvRBN'
 ##################################################################################################################
 google_analytics_key:       'UA-xxx-1'
 google_webmaster_key:       'XX-xx-XX'
