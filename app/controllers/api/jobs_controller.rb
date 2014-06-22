@@ -3,7 +3,7 @@ module Api
     def index
       builder = MockJobBuilder.new
       jobs = [].tap { |j| 10.times { j << builder.build } }
-      render json: jobs
+      render json: { jobs: jobs }
     end
 
     private
@@ -15,11 +15,12 @@ module Api
 
       def build
         @index += 1
-        offset = rand(0.0001) % 0.0002
+        offset_lat = rand(0.0001) % 0.005
+        offset_lon = rand(0.0001) % 0.005
         {
           id: @index, date: DateTime.new + @index,
           client: { name: "Client #{@index}" },
-          location: { lat: 52.535389 + offset, lon: 13.201322 + offset }
+          location: { lat: 52.517561 + offset_lat, lon: 13.414685 + offset_lon }
         }
       end
     end
