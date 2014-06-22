@@ -224,3 +224,10 @@ h1, h2, h3, h4, h5, h6 {
 input.form-control.error {
 	border: solid 1px #c00;
 }
+
+
+#flash_msg {
+	position: fixed;
+	top: 80px; left: 10%; right: 10%;
+	z-index: 777;
+}
