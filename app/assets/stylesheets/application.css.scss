@@ -10,6 +10,11 @@
 		a.btn {
 			line-height: 20px;
 			padding: 5px 15px;
+			color: #fff;
+			&:hover {
+				background: darken($brand-color, 20%);
+				color: #fff;
+			}
 		}
 	}
 	.navbar-brand { line-height: 40px; }
@@ -18,12 +23,18 @@
 		a, span {
 			padding: 5px 15px;
 			display: block;
+			color: #f3f2f2;
+			&:hover {
+				color: #fff;
+				background: #000;
+			}
 		}
 	}
 	li.dropdown.open > a {
 		background: #000;
 		color: #09c;
 	}
+	
 }
 
 body #body { padding: 40px 0 0;}
@@ -68,6 +79,9 @@ body #body { padding: 40px 0 0;}
 	.banner_text {
 		padding: 10px 0 80px;
 	}
+	
+	.banner-footer { background: rgba(255,255,255, .60); text-shadow: 0 0 3px #fff; }
+	
 }
 .pic-bottom {
 	background-image: image-url('grandma_wheelchair.png');
@@ -76,6 +90,10 @@ body #body { padding: 40px 0 0;}
 img.responsive {
 	max-width: 100%;
 	width: 100%;
+}
+
+.btn {
+	@include border-radius( 5px );
 }
 
 
@@ -188,18 +206,31 @@ ul.loud {
 }
 
 .btn-paypal, .btn-paypal > .btn {
-	background: #12398c;
+	// background: #12398c;
+	@include linear-gradient(#52b9f4, #1784cb);
 	color: #fff;
-	border: solid 1px darken(#12398c, 20%);
+	border: solid 1px darken(#52b9f4, 20%);
+	font-size: 16px;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	height: 42px;
+	line-height: 20px;
+	text-shadow: 0 1px 0 rgba(0,0,0,.75);
 	// &:hover, &:hover > .btn {
 	// 	background: darken(#12398c, 10%);
 	// 	color: #fff;
 	// }
-	&.icn { font-size: 20px !important; }
+	&.icn {
+		font-size: 18px !important;
+		@include box-shadow( inset -1px 0 1px 0 rgba(255,255,255,.32) );
+		min-width: 40px;
+		max-width: 42px;
+	}
 }
 
 .block-btn-group:hover .btn-paypal {
 	background: darken(#12398c, 10%);
+	@include linear-gradient( darken(#52b9f4, 10%), darken(#1784cb, 10%));
 	color: #fff;
 }
 
@@ -207,7 +238,7 @@ ul.loud {
 
 .section {
 	@include all_form_elements {
-		background: #e5e5e5;
+		background: #f3f2f2;
 	}
 }
 
@@ -235,3 +266,17 @@ input.form-control.error {
 	top: 80px; left: 10%; right: 10%;
 	z-index: 777;
 }
+
+
+
+.icn_list {
+	padding: 0 0 0 50px;
+	img {
+		display: block; position: absolute;
+		top: 0; right: 0; left: 0;
+		color: #333;
+	}
+}
+
+
+.inline_table > .cell.icn_pic { width: 60px; }

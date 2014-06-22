@@ -5,3 +5,26 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+SHIFTS = [2,4,8]
+
+
+JOBS = [
+  {
+    js_date: "22/06/2014",
+    duration: SHIFTS[ rand(3) ],
+    job_type: "care",
+    address_attributes: {
+      street: "Grünberger Str.",
+      street_number: "60",
+      zip: "10245",
+      city: "Berlin",
+      state: "Berlin",
+      langitude: "",
+      lotitude: ""
+    }
+  },
+  {
+    # ...
+  }
+]

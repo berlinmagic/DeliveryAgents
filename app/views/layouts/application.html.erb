@@ -30,9 +30,9 @@
         <%= link_to CONFIG[:app_name], root_path, class: "navbar-brand" %>
       </div>
       <div class="collapse navbar-collapse" id="front-main-nav-colapse">
-        <% if 3 == 4 %>
+        <% if current_user %>
         <ul class="nav navbar-nav navbar-left">
-          <li><span class="name"><%= "Logged In" if current_user %></span></li>
+          <li><%= link_to "Jobs", jobs_path %></li>
         </ul>
         <% end %>
         <ul class="nav navbar-nav navbar-right">

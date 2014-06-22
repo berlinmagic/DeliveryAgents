@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # =>   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   # => end
   
-  resources :jobs
+  resources :jobs do
+    get :suggestions, on: :collection
+  end
   
   get 'auth/:provider/callback', to: 'sessions#provider'
   get 'auth/failure', to: redirect('/')
