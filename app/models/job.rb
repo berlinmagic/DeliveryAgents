@@ -1,4 +1,20 @@
 # encoding: utf-8
+# == Schema Information
+#
+# Table name: jobs
+#
+#  id          :integer          not null, primary key
+#  job_type    :string(255)
+#  description :text
+#  date        :datetime
+#  duration    :integer
+#  state       :string(255)
+#  client_id   :integer
+#  agent_id    :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Job < ActiveRecord::Base
   
   TYPES = %w(care help clean)

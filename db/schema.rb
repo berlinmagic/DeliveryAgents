@@ -23,12 +23,15 @@ ActiveRecord::Schema.define(version: 20140622035705) do
     t.string   "country"
     t.float    "longitude"
     t.float    "latitude"
-    t.integer  "user_id"
+    t.integer  "owner_id"
+    t.string   "owner_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id"
+  add_index "addresses", ["latitude"], name: "index_addresses_on_latitude"
+  add_index "addresses", ["longitude"], name: "index_addresses_on_longitude"
+  add_index "addresses", ["owner_type", "owner_id"], name: "index_addresses_on_owner_type_and_owner_id"
 
   create_table "applications", force: true do |t|
     t.integer  "job_id"

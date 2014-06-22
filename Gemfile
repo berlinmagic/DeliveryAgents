@@ -44,6 +44,7 @@ group :development do
   gem "better_errors"                       # => much better and more useful error page
   gem "binding_of_caller"                   # => makes better_errors even better (variables ...)
   gem 'quiet_assets'                        # => shortened log from asset-pipeline
+  gem "annotate"
 end
 
 

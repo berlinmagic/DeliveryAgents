@@ -1,4 +1,24 @@
 # encoding: utf-8
+# == Schema Information
+#
+# Table name: addresses
+#
+#  id            :integer          not null, primary key
+#  street        :string(255)
+#  street_number :string(255)
+#  zip           :string(255)
+#  city          :string(255)
+#  subcity       :string(255)
+#  state         :string(255)
+#  country       :string(255)
+#  longitude     :float
+#  latitude      :float
+#  owner_id      :integer
+#  owner_type    :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 class Address < ActiveRecord::Base
 
   MODEL_PARAMS = [      :street, :street_number, :zip, :city, :subcity, :state, :country,
