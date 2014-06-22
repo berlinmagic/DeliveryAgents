@@ -32,10 +32,33 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise  :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable,
           :omniauthable, :omniauth_providers => [:paypal]
-
+  
+  attr_accessor :image_url
+  
   has_many :offered_jobs,   class_name: "Job",  foreign_key: :client_id
   has_many :job_offers,     class_name: "Job",  foreign_key: :agent_id
   has_one_address
+  
+  dragonfly_accessor :image
+  
+  before_validation :check_for_changes
+  
+  
+  scope :random, ->(*args) { where(nil).order('RAND()').limit(args.first || 1) }
+  scope :agents, -> { where( user_type: "agent" ) }
+  
+  
+  def has_initials?
+    self.image_name.to_s == "initials.png"
+  end
+
+  def has_image?
+    self.image_stored?
+  end
+
+  def get_image_url
+    self.image_stored? ? self.image.thumb("150x150#").url() : "fallbacks/user3_360.png"
+  end
 
   def self.find_for_paypal_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
@@ -57,4 +80,29 @@ class User < ActiveRecord::Base
       end
     end
   end
+  
+  
+  private
+    
+    def check_for_changes
+      self.first_name = self.first_name.to_s.strip.capitalize if self.first_name_changed?
+      self.last_name = self.last_name.to_s.strip.capitalize if self.last_name_changed?
+      self.name = "#{first_name} #{last_name}".strip if self.first_name_changed? || self.last_name_changed?
+      generate_initials if self.image_url.blank?
+      generate_image if self.image_url.present?
+    end
+
+    def generate_image
+      app = Dragonfly.app
+      self.image = app.fetch_url( self.image_url.to_s )
+    end
+
+    def generate_initials
+      # generate new initials if needed
+      if (self.first_name.present? && self.last_name.present?) && (!self.image_stored? || ((self.first_name_changed? || self.last_name_changed?) && self.has_initials?))
+        app = Dragonfly.app
+        self.image = app.generate(:square_text, "#{self.first_name.to_s[0]}#{self.last_name.to_s[0]}".strip)
+      end
+    end
+    
 end

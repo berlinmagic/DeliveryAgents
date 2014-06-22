@@ -40,6 +40,8 @@ gem 'rabl'
 gem 'oj'
 
 
+gem 'dragonfly', "~>1.0.4"
+
 
 group :development do
   gem 'letter_opener'                       # => open emails in a new browser-window

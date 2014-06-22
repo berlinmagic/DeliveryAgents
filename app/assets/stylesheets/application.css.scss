@@ -280,3 +280,16 @@ input.form-control.error {
 
 
 .inline_table > .cell.icn_pic { width: 60px; }
+
+
+.usr_pic {
+	display: block; display: inline-block; position: relative;
+	border: solid 1px #ccc;
+	width: 30%;
+	padding: 3px;
+	background: #fff;
+	@include border-radius(3px);
+	img {
+		max-width: 100%;
+	}
+}

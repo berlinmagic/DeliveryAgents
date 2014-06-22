@@ -1,10 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# encoding: utf-8
+# 
+#   CareAgents - DataBase - Seeds
 #
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+## Savely reset Database
+puts 'Drop all tables'
+ActiveRecord::Base.connection.tables.each { |t| ActiveRecord::Base.connection.drop_table t }
+Rake::Task["db:migrate"].invoke
+
+puts '... Migration done ...'
+
 
 SHIFTS = [2,4,8]
 
@@ -153,3 +158,55 @@ JOBS = [
     }
   }
 ]
+
+AGENTS = [
+  {
+    first_name: "John",
+    last_name: "Lunn",
+    image_url: "http://wip.org/media/lunn_john_abosch.jpg",
+    email: "jl@careagents.de",
+    password: "paypal"
+  },
+  {
+    first_name: "Christiano",
+    last_name: "Betta",
+    image_url: "http://c1.staticflickr.com/3/2188/2335873600_cc65700a8c_b.jpg",
+    email: "cb@careagents.de",
+    password: "paypal"
+  },
+  {
+    first_name: "Didier",
+    last_name: "Vermieren",
+    image_url: "http://webmission.be/wp-content/uploads/2012/03/Didier_Vermeiren.jpg",
+    email: "dv@careagents.de",
+    password: "paypal"
+  },
+  {
+    first_name: "Sascha",
+    last_name: "Karstädt",
+    image_url: "http://youisnow.com/wp-content/uploads/sascha_druck-150x150.jpg",
+    email: "sk@careagents.de",
+    password: "paypal"
+  },
+  {
+    first_name: "Sabine",
+    last_name: "Geidner",
+    image_url: "http://lh5.googleusercontent.com/-nJFTj5Pc-Qs/AAAAAAAAAAI/AAAAAAAAC28/fbNeWMw_U1A/photo.jpg",
+    email: "sg@careagents.de",
+    password: "paypal"
+  }
+  
+]
+
+
+
+
+AGENTS.each do |agent|
+  puts "Adding User '#{agent[:last_name]}, #{agent[:first_name]}"
+  usr = User.create( agent.merge({ password_confirmation: agent[:password], user_type: "agent" }) )
+  if agent[:image_url].present?
+    usr.image_url = agent[:image_url]
+  end
+  usr.save
+  puts "Adding User '#{usr.image_name} .. #{agent[:image_url]}"
+end
