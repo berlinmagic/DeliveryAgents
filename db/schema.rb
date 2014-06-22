@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140622035552) do
+ActiveRecord::Schema.define(version: 20140622035705) do
 
   create_table "addresses", force: true do |t|
     t.string   "street"
@@ -23,15 +23,23 @@ ActiveRecord::Schema.define(version: 20140622035552) do
     t.string   "country"
     t.float    "longitude"
     t.float    "latitude"
-    t.integer  "owner_id"
-    t.string   "owner_type"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "addresses", ["latitude"], name: "index_addresses_on_latitude"
-  add_index "addresses", ["longitude"], name: "index_addresses_on_longitude"
-  add_index "addresses", ["owner_type", "owner_id"], name: "index_addresses_on_owner_type_and_owner_id"
+  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id"
+
+  create_table "applications", force: true do |t|
+    t.integer  "job_id"
+    t.integer  "agent_id"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "applications", ["agent_id"], name: "index_applications_on_agent_id"
+  add_index "applications", ["job_id"], name: "index_applications_on_job_id"
 
   create_table "jobs", force: true do |t|
     t.string   "job_type"

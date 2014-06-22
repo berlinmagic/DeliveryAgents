@@ -196,3 +196,11 @@ ul.loud {
 	background: darken(#12398c, 10%);
 	color: #fff;
 }
+
+
+
+.section {
+	@include all_form_elements {
+		background: #e5e5e5;
+	}
+}

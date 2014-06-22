@@ -1,7 +1,8 @@
 # encoding: utf-8
 class Job < ActiveRecord::Base
   
-  TYPES = %w(new accepted refused)
+  TYPES = %w(care help clean)
+  STATES = %w(new accepted refused)
   
   belongs_to :client,       class_name: "User",         foreign_key: :client_id
   belongs_to :agent,        class_name: "User",         foreign_key: :agent_id
