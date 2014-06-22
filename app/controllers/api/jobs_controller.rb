@@ -18,7 +18,7 @@ module Api
         offset_lat = rand(0.0001) % 0.005
         offset_lon = rand(0.0001) % 0.005
         {
-          id: @index, date: DateTime.new + @index,
+          id: @index, date: DateTime.new,
           client: { name: "Client #{@index}" },
           location: { lat: 52.517561 + offset_lat, lon: 13.414685 + offset_lon }
         }

@@ -16,17 +16,17 @@
 #
 
 class Job < ActiveRecord::Base
-  
+
   MODEL_PARAMS = [ :id, :job_type, :description, :date, :js_date, :duration, :_destroy, :address_attributes => Address::MODEL_PARAMS ]
-  
+
   TYPES = %w(care help clean)
   STATES = %w(new accepted refused)
-  
+
   belongs_to :client,       class_name: "User",         foreign_key: :client_id
   belongs_to :agent,        class_name: "User",         foreign_key: :agent_id
-  
+
   has_many :applications,   class_name: "Application",  foreign_key: :job_id
-  
+
   has_one_address
-  
+
 end
